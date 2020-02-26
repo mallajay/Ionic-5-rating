@@ -1,1 +1,4 @@
 # Ionic-rating
+
+
+![](/img.PNG)
