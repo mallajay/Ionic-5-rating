@@ -1,0 +1,127 @@
+<ion-row class="border">
+  <ion-col size-xs="12" size-sm="12" size-md="5" size-lg="6" size-xl="6">
+    <ion-item lines="none" style="margin-top: 10%;">
+      <ion-label class="ion-text-center">
+        <h1 style="font-size: 50px;" *ngIf="this.averageStar">
+          {{ this.averageStar | number: "1.2-2" }}
+        </h1>
+        <h1 *ngIf="!this.averageStar">Not rated yet</h1>
+        <ion-icon
+          *ngFor="let n of ratingRange; let i = index"
+          [name]="i < this.averageStar ? 'star' : 'star-outline'"
+          class="avg-icon"
+        ></ion-icon>
+
+        <p *ngIf="this.star.starTotal">
+          <b>
+            {{ this.averageStar | number: "1.1-1" }} average based on
+            {{ this.star.starTotal }} reviews.
+          </b>
+        </p>
+      </ion-label>
+    </ion-item>
+  </ion-col>
+
+  <!-- Progress Bar -->
+  <ion-col size-xs="12" size-sm="12" size-md="7" size-lg="6" size-xl="6">
+    <!-- 5 Star -->
+    <ion-item lines="none" class="ion-no-padding">
+      <ion-label>
+        <ion-progress-bar
+          class="bar-5"
+          value="{{ this.barFiveProgress || 0 }}"
+        ></ion-progress-bar>
+      </ion-label>
+      <span style="margin-left: 1%;">
+        <ion-icon
+          *ngFor="let n of ratingRange; let i = index"
+          [name]="i < rating5 ? 'star' : 'star-outline'"
+          class="icon-color"
+        ></ion-icon>
+      </span>
+      <span style="margin-left: 1%;">
+        {{ this.barFiveProgress * 100 | number: "1.1-1" || 0 }} %
+      </span>
+    </ion-item>
+
+    <!-- 4 Star -->
+    <ion-item lines="none" class="ion-no-padding">
+      <ion-label>
+        <ion-progress-bar
+          class="bar-4"
+          value="{{ this.barFourProgress || 0 }}"
+        ></ion-progress-bar>
+      </ion-label>
+      <span style="margin-left: 1%;">
+        <ion-icon
+          *ngFor="let n of ratingRange; let i = index"
+          [name]="i < rating4 ? 'star' : 'star-outline'"
+          class="icon-color"
+        ></ion-icon>
+      </span>
+      <span style="margin-left: 1%;">
+        {{ this.barFourProgress * 100 | number: "1.1-1" || 0 }} %
+      </span>
+    </ion-item>
+
+    <!-- 3 Star -->
+    <ion-item lines="none" class="ion-no-padding">
+      <ion-label>
+        <ion-progress-bar
+          class="bar-3"
+          value="{{ this.barThreeProgress || 0 }}"
+        ></ion-progress-bar>
+      </ion-label>
+      <span style="margin-left: 1%;">
+        <ion-icon
+          *ngFor="let n of ratingRange; let i = index"
+          [name]="i < rating3 ? 'star' : 'star-outline'"
+          class="icon-color"
+        ></ion-icon>
+      </span>
+      <span style="margin-left: 1%;">
+        {{ this.barThreeProgress * 100 | number: "1.1-1" || 0 }} %
+      </span>
+    </ion-item>
+
+    <!-- 2 Star -->
+    <ion-item lines="none" class="ion-no-padding">
+      <ion-label>
+        <ion-progress-bar
+          class="bar-2"
+          value="{{ this.barTwoProgress || 0 }}"
+        ></ion-progress-bar>
+      </ion-label>
+      <span style="margin-left: 1%;">
+        <ion-icon
+          *ngFor="let n of ratingRange; let i = index"
+          [name]="i < rating2 ? 'star' : 'star-outline'"
+          class="icon-color"
+        ></ion-icon>
+      </span>
+      <span style="margin-left: 1%;">
+        {{ this.barTwoProgress * 100 | number: "1.1-1" || 0 }} %
+      </span>
+    </ion-item>
+
+    <!-- 1 Star -->
+    <ion-item lines="none" class="ion-no-padding">
+      <ion-label>
+        <ion-progress-bar
+          class="bar-1"
+          value="{{ this.barOneProgress || 0 }}"
+        ></ion-progress-bar>
+      </ion-label>
+      <span style="margin-left: 1%;">
+        <ion-icon
+          *ngFor="let n of ratingRange; let i = index"
+          [name]="i < rating1 ? 'star' : 'star-outline'"
+          class="icon-color"
+        ></ion-icon>
+      </span>
+      <span style="margin-left: 1%;">
+        {{ this.barOneProgress * 100 | number: "1.1-1" || 0 }} %
+      </span>
+    </ion-item>
+  </ion-col>
+</ion-row>

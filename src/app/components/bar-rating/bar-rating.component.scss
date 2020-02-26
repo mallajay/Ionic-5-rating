@@ -1,0 +1,45 @@
+.border {
+  border: 1px solid #dfe1e5;
+  border-radius: 8px;
+}
+
+/* Individual bars */
+.bar-5 {
+  width: 100%;
+  height: 20px;
+  --background: #f1f1f1;
+  --progress-background: #4caf50;
+}
+.bar-4 {
+  width: 100%;
+  height: 20px;
+  --background: #f1f1f1;
+  --progress-background: #2196f3;
+}
+.bar-3 {
+  width: 100%;
+  height: 20px;
+  --background: #f1f1f1;
+  --progress-background: #00bcd4;
+}
+
+.bar-2 {
+  width: 100%;
+  height: 20px;
+  --background: #f1f1f1;
+  --progress-background: #ff9800;
+}
+.bar-1 {
+  width: 100%;
+  height: 20px;
+  --background: #f1f1f1;
+  --progress-background: #f44336;
+}
+
+.icon-color {
+  color: orange;
+}
+
+.avg-icon {
+  color: orange;
+}
